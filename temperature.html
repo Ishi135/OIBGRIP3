@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="main.css">
+
+    <script>
+        let convert=() =>{
+        let option = document.querySelector("#degree");
+        let display = document.querySelector(".result");
+        var input = document.querySelector("#temp").value;
+
+        if(option.value == "Fahrenheit"){
+            let c=(input-32)*(5/9);
+            display.innerHTML = c.toFixed(4)+ "C";
+        }
+
+        else if(option.value == "Celsius"){
+            let f=input (9/5)+32;
+            display.innerHTML = f.toFixed(4)+ "F";
+        }
+        }
+
+        let reset=() =>{
+        let display = document.querySelector(".result");
+        var input = document.querySelector("#temp").value;
+        display.innerHTML=" ";
+        input.value = "0";
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        <h3>TEMPERATURE CONVERTER</h3>
+    </header>
+
+    <div class="class">
+    <div>
+        <label for="degree">Unit</label>     
+        <select name="degree" id="degree">
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="temperature">Degrees</label>
+        <input type="number" id="temp" placeholder="Enter Temperature">
+    </div>
+    </div>
+
+    <div class="value" style="font-size: 20px;">
+        <div class="result" id="val"></div>
+    </div>
+
+    <div class="b">
+        <button class="convert" onclick="convert()">Convert</button>
+        <button class="reset" onclick="reset()">Reset</button>
+    </div>
+
+</body>
+</html>
